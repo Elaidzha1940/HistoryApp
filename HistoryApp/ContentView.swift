@@ -13,6 +13,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    var artifacts: [HistoricalArtifact]
+    
     var body: some View {
         
         NavigationView {
@@ -45,7 +47,10 @@ struct ContentView: View {
                                 .multilineTextAlignment(.leading)
                                 .padding()
                             
-                            
+                            Rectangle()
+                                .foregroundColor(.clear)
+                                .frame(width: 375, height: 2)
+                                .background(Color("text"))
                         }
                     }
                 }
@@ -58,7 +63,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-        
+        ContentView(artifacts: sampleArtifatcs)
     }
 }
