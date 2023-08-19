@@ -53,6 +53,9 @@ struct ContentView: View {
                                 .background(Color("text"))
                         }
                     }
+                    .navigationBarItems(leading: Image(systemName: "chevron.left"))
+                    .foregroundColor(Color("text"))
+                    .font(.title2)
                 }
                 .padding(.top, 30)
             }
@@ -64,5 +67,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(artifacts: sampleArtifatcs)
+    }
+}
+
+struct ArtifactDetail: View {
+    var artifacts: HistoricalArtifact
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        
+        ScrollView {
+            VStack {
+                Image(artifact.im)
+            }
+        }
     }
 }
