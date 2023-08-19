@@ -25,13 +25,13 @@ struct ContentView: View {
                         ZStack {
                             Rectangle()
                                 .foregroundColor(.clear)
-                                .frame(width: 400, height: 400)
+                            // .frame(width: 400, height: 400)
                                 .background(
                                     Image("genghiskhan")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .cornerRadius(90)
-                                        .frame(width: 360, height: 300)
+                                        .cornerRadius(200)
+                                        .frame(width: 350, height: 300)
                                 )
                             
                             Text("Genghis Khan")
@@ -39,39 +39,44 @@ struct ContentView: View {
                                 .foregroundColor(Color("text"))
                                 .multilineTextAlignment(.leading)
                                 .frame(width: 350, alignment: .topLeading)
-                                .padding(.top, 300)
-                            
-                            Text("There is no universally adopted system of transliterating original Mongolian names into English; many different systems and standards continue to be in use today, resulting in modern spellings that often differ considerably from the original pronunciation. Ultimately, the honorific most commonly spelt Genghis derives from the autochthonous Mongolian ᠴᠢᠩᠭᠢᠰ ᠬᠠᠭᠠᠨ (Mongolian pronunciation: [t͡ʃʰiŋɡɪs xaːŋ]), most closely represented in English by the spelling Čhinggis.")
-                                .font(.system(size: 20, weight: .bold, design: .monospaced))
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color("text"))
-                                .padding()
-                            
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(width: 375, height: 2)
-                                .background(Color("text"))
-                            ForEach(artifact) { artifact in
-                                NavigationLink(destination: ArtifactDetail(artifact: artifact)) {
-                                    VStack {
-                                        Text(artifact.name)
+                                .padding(.top, 450)
+                        }
+                        Text("There is no universally adopted system of transliterating original Mongolian names into English; many different systems and standards continue to be in use today, resulting in modern spellings that often differ considerably from the original pronunciation. Ultimately, the honorific most commonly spelt Genghis derives from the autochthonous Mongolian ᠴᠢᠩᠭᠢᠰ ᠬᠠᠭᠠᠨ (Mongolian pronunciation: [t͡ʃʰiŋɡɪs xaːŋ]), most closely represented in English by the spelling Čhinggis.")
+                            .font(.system(size: 20, weight: .bold, design: .monospaced))
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color("text"))
+                            .padding()
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 375, height: 2)
+                            .background(Color("text"))
+                        ForEach(artifact) { artifact in
+                            NavigationLink(destination: ArtifactDetail(artifact: artifact)) {
+                                VStack {
+                                    Text(artifact.name)
+                                        .font(.system(size: 20, weight: .bold, design: .monospaced))
+                                        .foregroundColor(Color("text"))
+                                    
+                                    HStack{
+                                        Rectangle()
+                                            .foregroundColor(.clear)
+                                            .frame(width: 175, height: 175)
+                                            .background(
+                                                Image(artifact.imageName)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 175, height: 175)
+                                            )
+                                            .cornerRadius(30)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .padding()
+                                        
+                                        Text(artifact.era)
                                             .font(.system(size: 20, weight: .bold, design: .monospaced))
+                                            .multilineTextAlignment(.leading)
                                             .foregroundColor(Color("text"))
                                         
-                                        HStack{
-                                            Rectangle()
-                                                .foregroundColor(.clear)
-                                                .frame(width: 175, height: 175)
-                                                .background(
-                                                    Image(artifact.imageName)
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-                                                        .frame(width: 175, height: 175)
-                                                )
-                                                .cornerRadius(30)
-                                                .frame(maxWidth: .infinity, al)
-                                            
-                                        }
                                     }
                                 }
                             }
@@ -121,7 +126,7 @@ struct ArtifactDetail: View {
                         .foregroundColor(Color("text"))
                         .multilineTextAlignment(.leading)
                         .frame(width: 350, alignment: .topLeading)
-                        .padding(.top, -800)
+                        .padding(.top, -500)
                     
                     Text(artifact.description)
                         .font(.system(size: 20, weight: .bold, design: .monospaced))
