@@ -108,7 +108,19 @@ struct ArtifactDetail: View {
                 }
             }
         }
-        
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left.circle.fill")
+                    .font(.title)
+            }
+            .foregroundColor(.white.opacity(0.5))
+        }
+        )
+        .frame(maxHeight: .infinity, alignment: .top)
+        .ignoresSafeArea(.container, edges: <#T##Edge.Set#>)
     }
 }
