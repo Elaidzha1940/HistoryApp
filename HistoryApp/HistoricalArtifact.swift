@@ -11,5 +11,11 @@ import SwiftUI
 
 struct HistoricalArtifact: Identifiable {
     
+    var id = UUID()
+    var name: String
+    var era: String
+    var description: String
+    var imageName: String
 }
+
 
