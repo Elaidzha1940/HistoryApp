@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var artifacts: [HistoricalArtifact]
+    var artifact: [HistoricalArtifact]
     
     var body: some View {
         
@@ -66,18 +66,23 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(artifacts: sampleArtifatcs)
+        ContentView(artifact: sampleArtifatcs)
     }
 }
 
 struct ArtifactDetail: View {
-    var artifacts: HistoricalArtifact
+    var artifact: HistoricalArtifact
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         ScrollView {
             VStack {
-                Image(artifact.im)
+                Image(artifact.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea(edges: .top)
+                    .offset(y: -10)
             }
         }
     }
