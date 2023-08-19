@@ -83,7 +83,32 @@ struct ArtifactDetail: View {
                     .frame(maxWidth: .infinity)
                     .ignoresSafeArea(edges: .top)
                     .offset(y: -10)
+                
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 615, height: 715)
+                        .background(Color("text"))
+                        .blur(radius: 115)
+                        .offset(y: 660)
+                    
+                    Text(artifact.name)
+                        .font(.system(size: 40, weight: .bold, design: .monospaced))
+                        .foregroundColor(Color("text"))
+                        .multilineTextAlignment(.leading)
+                        .frame(width: 350, alignment: .topLeading)
+                        .padding(.top, -800)
+                    
+                    Text(artifact.description)
+                        .font(.system(size: 20, weight: .bold, design: .monospaced))
+                        .foregroundColor(Color("text"))
+                        .frame(width: 370, alignment: .topLeading)
+                        .padding(.top, 50)
+                    
+                }
             }
         }
+        
+        
     }
 }
