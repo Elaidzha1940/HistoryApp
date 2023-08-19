@@ -12,12 +12,21 @@
 import SwiftUI
 
 struct ContentView: View {
-        
+    
     var body: some View {
         
-        VStack {
-          
-            
+        NavigationView {
+            VStack(spacing: 10) {
+                ScrollView {
+                    ZStack {
+                         
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .frame(width: 400, height: 400)
+                        
+                    }
+                }
+            }
         }
     }
 }
@@ -25,5 +34,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }
